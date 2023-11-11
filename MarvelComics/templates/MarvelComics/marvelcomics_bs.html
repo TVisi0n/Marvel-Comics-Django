@@ -1,0 +1,13 @@
+{% extends "marvelcomics_base.html" %}
+
+{% block content %}
+
+    <div class="container-bs">
+        <h1 class="h1-bs">Comic Cover Web Scraper</h1>
+        <h3 class="h3-bs">Scraping through the website: <a href="https://www.coverbrowser.com/covers/marvel-comics">https://www.coverbrowser.com/covers/marvel-comics</a></h3>
+            {% for i in images %}
+                <img src="{{ i }}" alt="Marvel Comics Images">
+            {% endfor %}
+    </div>
+
+{% endblock %}

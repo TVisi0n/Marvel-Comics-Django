@@ -1,0 +1,17 @@
+{% extends "marvelcomics_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h1>Update</h1>
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn" type="submit">Save</button>
+    </form>
+    <button class="btn" type="submit"><a href="{% url 'marvelcomics_delete' comic.id %}">Delete</a></button>
+    <button class="btn" type="submit"><a href="{% url 'marvelcomics_details' comic.id %}">Back</a></button>
+</div>
+
+{% endblock %}

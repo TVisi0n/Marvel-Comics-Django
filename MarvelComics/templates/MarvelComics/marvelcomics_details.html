@@ -1,0 +1,10 @@
+{% extends "marvelcomics_base.html" %}
+
+{% block content %}
+
+<h1>Details</h1>
+<h3>{{ comic.name }} Number {{ comic.issue }} </h3>
+<p>{{ comic.description }}</p>
+<button class="btn"><a href="{% url 'marvelcomics_update' comic.id %}">Update</a></button>
+<button class="btn"><a href="{% url 'marvelcomics_shelf'%}">Back</a></button>
+{% endblock %}

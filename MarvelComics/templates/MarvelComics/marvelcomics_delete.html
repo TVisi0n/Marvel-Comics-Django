@@ -1,0 +1,12 @@
+{% extends "marvelcomics_base.html" %}
+
+
+{% block content %}
+<h1>Delete</h1>
+<form method="POST">
+    {% csrf_token %}
+    <h3>Permanetly delete entry: "{{ comic.name }}"?</h3>
+    <button class="btn" type="submit" onclick="popUp()">DELETE</button>
+    <button class="btn"><a href="{% url 'marvelcomics_update' comic.id %}">Back</a></button>
+</form>
+{% endblock %}

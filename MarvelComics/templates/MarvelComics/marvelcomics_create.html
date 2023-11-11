@@ -1,0 +1,22 @@
+{% extends "marvelcomics_base.html" %}
+
+{% block title %} The Marvel Comic Shelf {% endblock %}
+
+{% block header %} Add a Comic to your Shelf {% endblock %}
+
+{% block content %}
+
+<div>
+    <h1>Add a Comic to your Shelf</h1>
+    <form method="POST" action={% url 'marvelcomics_create' %}>
+        <div>
+            {% csrf_token %}
+            {{ form.as_p }}
+        </div>
+        <div>
+            <button type="submit" class="btn" value="Add Comic" name="Save Item">Add Comic</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
